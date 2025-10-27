@@ -29,6 +29,7 @@ void Win32FindFile(int argc, char *argv[])
    DWORD BufferSize = GetCurrentDirectory(MAX_PATH, Buffer);
    Buffer[BufferSize] = '\\';
    Buffer[BufferSize + 1] = '*';
+   Buffer[BufferSize + 2] = '\0';
    HANDLE FileHandle = FindFirstFile(Buffer, &FileData);//FileHandle
    HANDLE ConsoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);//Console Handle
 
